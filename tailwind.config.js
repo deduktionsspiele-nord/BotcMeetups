@@ -91,6 +91,9 @@ export default {
           50: '#fef2f2',
           500: '#ef4444',
           700: '#b91c1c',
+        },
+        'floral': {
+          500: '#fffaf0'
         }
       },
       animation: {
