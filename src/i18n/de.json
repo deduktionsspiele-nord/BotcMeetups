@@ -80,6 +80,7 @@
       "participants": "Teilnehmer",
       "host": "Gastgeber",
       "player": "Spieler",
+      "spectator": "Zuschauer",
       "description": "Beschreibung",
       "deleteWarning": "Warnung: Diese Aktion kann nicht rückgängig gemacht werden. Das Event \"{title}\" wird dauerhaft gelöscht und alle Teilnehmer werden entfernt.",
       "typeDeleteConfirm": "Bitte geben Sie 'delete' ein zur Bestätigung",
