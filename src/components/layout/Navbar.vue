@@ -9,12 +9,7 @@
       <div class="flex justify-between items-center">
         <!-- Logo & Nav Links -->
         <div class="flex items-center space-x-8">
-          <router-link to="/" class="flex items-center space-x-2">
-            <div class="w-10 h-10 bg-contain bg-center bg-no-repeat" style="background-image: url('/src/assets/images/DSN_Logo_screen_new.png')"></div>
-            <span class="font-display text-xl font-bold text-floral-500 hidden md:block">
-              {{ $t('organisation.longName') }}
-            </span>
-          </router-link>
+          <Logo href="https://deduktionsspiele-nord.de" external />
           
           <nav class="hidden md:flex items-center space-x-6">
             <router-link 
@@ -143,6 +138,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 import LanguageSwitcher from './LanguageSwitcher.vue';
+import Logo from '@/components/ui/Logo.vue';
 
 const authStore = useAuthStore();
 const router = useRouter();
