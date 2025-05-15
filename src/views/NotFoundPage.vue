@@ -13,11 +13,10 @@
         </svg>
       </div>
       
-      <h2 class="text-2xl font-bold mb-4">Page Not Found</h2>
+      <h2 class="text-2xl font-bold mb-4">{{ $t('common.error') }}</h2>
       
       <p class="text-light-600 mb-8">
-        The townsfolk searched high and low, but couldn't find the page you're looking for. 
-        It may have been killed by the demon, or it never existed in the first place.
+        {{ $t('events.noEventsDesc') }}
       </p>
       
       <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -26,11 +25,11 @@
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
-          Go Back
+          {{ $t('common.cancel') }}
         </Button>
         
         <router-link to="/">
-          <Button variant="outline">Return to Home</Button>
+          <Button variant="outline">{{ $t('nav.home') }}</Button>
         </router-link>
       </div>
     </div>

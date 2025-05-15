@@ -8,11 +8,11 @@
               <span class="text-white font-display text-lg">B</span>
             </div>
             <span class="font-display text-lg font-bold text-primary-400">
-              BloodMeetup
+              {{ $t('app.name') }}
             </span>
           </div>
           <p class="text-sm text-light-500 mb-4">
-            Connect with Blood on the Clocktower players in your area, organize games, and join the community.
+            {{ $t('app.tagline') }}
           </p>
           <div class="flex space-x-4">
             <a href="#" class="text-light-500 hover:text-primary-400 transition-colors">
@@ -37,78 +37,68 @@
         </div>
         
         <div>
-          <h3 class="font-bold text-light-800 uppercase tracking-wider text-sm mb-4">Navigation</h3>
+          <h3 class="font-bold text-light-800 uppercase tracking-wider text-sm mb-4">{{ $t('footer.navigation') }}</h3>
           <ul class="space-y-2">
             <li>
               <router-link to="/" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Home
+                {{ $t('nav.home') }}
               </router-link>
             </li>
             <li>
               <router-link to="/events" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Find Events
+                {{ $t('nav.events') }}
               </router-link>
             </li>
             <li>
               <router-link to="/create-event" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Create Event
+                {{ $t('nav.createEvent') }}
               </router-link>
             </li>
             <li>
               <router-link to="/profile" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Profile
+                {{ $t('nav.profile') }}
               </router-link>
             </li>
           </ul>
         </div>
         
         <div>
-          <h3 class="font-bold text-light-800 uppercase tracking-wider text-sm mb-4">Resources</h3>
+          <h3 class="font-bold text-light-800 uppercase tracking-wider text-sm mb-4">{{ $t('footer.resources') }}</h3>
           <ul class="space-y-2">
             <li>
               <a href="https://bloodontheclocktower.com/" target="_blank" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Official Game Site
+                {{ $t('footer.officialSite') }}
               </a>
             </li>
             <li>
               <a href="#" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Gameplay Rules
+                {{ $t('footer.gameplayRules') }}
               </a>
             </li>
             <li>
               <a href="#" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Character Guides
+                {{ $t('footer.characterGuides') }}
               </a>
             </li>
             <li>
               <a href="#" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Storyteller Resources
+                {{ $t('footer.storytellerResources') }}
               </a>
             </li>
           </ul>
         </div>
         
         <div>
-          <h3 class="font-bold text-light-800 uppercase tracking-wider text-sm mb-4">About</h3>
+          <h3 class="font-bold text-light-800 uppercase tracking-wider text-sm mb-4">{{ $t('footer.about') }}</h3>
           <ul class="space-y-2">
             <li>
               <a href="#" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                About Us
+                {{ $t('footer.aboutUs') }}
               </a>
             </li>
             <li>
               <a href="#" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Terms of Service
-              </a>
-            </li>
-            <li>
-              <a href="#" class="text-light-500 hover:text-primary-400 transition-colors text-sm">
-                Contact
+                {{ $t('footer.contact') }}
               </a>
             </li>
           </ul>
@@ -117,10 +107,10 @@
       
       <div class="border-t border-dark-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
         <p class="text-sm text-light-600 mb-4 md:mb-0">
-          &copy; {{ currentYear }} BloodMeetup. All rights reserved.
+          {{ $t('footer.copyright', { year: currentYear }) }}
         </p>
         <p class="text-sm text-light-600">
-          Blood on the Clocktower is a trademark of The Pandemonium Institute.
+          {{ $t('footer.trademark') }}
         </p>
       </div>
     </div>
