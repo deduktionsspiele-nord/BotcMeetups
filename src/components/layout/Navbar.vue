@@ -14,7 +14,7 @@
               <span class="text-white font-display text-xl">B</span>
             </div>
             <span class="font-display text-xl font-bold text-primary-400 hidden md:block">
-              BloodMeetup
+              {{ $t('app.name') }}
             </span>
           </router-link>
           
@@ -26,19 +26,21 @@
               class="text-light-700 hover:text-primary-400 transition-colors py-1"
               active-class="text-primary-400 border-b-2 border-primary-400"
             >
-              {{ link.label }}
+              {{ $t(link.label) }}
             </router-link>
           </nav>
         </div>
         
         <!-- Auth Buttons / User Menu -->
         <div class="flex items-center space-x-4">
+          <LanguageSwitcher class="mr-2" />
+          
           <template v-if="!authStore.isAuthenticated">
             <router-link to="/login" class="text-light-700 hover:text-light-900">
-              Log In
+              {{ $t('nav.login') }}
             </router-link>
             <router-link to="/register" class="btn btn-primary">
-              Sign Up
+              {{ $t('nav.signup') }}
             </router-link>
           </template>
           <template v-else>
@@ -131,7 +133,7 @@
           active-class="bg-primary-900 text-primary-100"
           @click="mobileMenuOpen = false"
         >
-          {{ link.label }}
+          {{ $t(link.label) }}
         </router-link>
       </div>
     </div>
@@ -142,6 +144,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
+import LanguageSwitcher from './LanguageSwitcher.vue';
 
 const authStore = useAuthStore();
 const router = useRouter();
@@ -151,9 +154,9 @@ const userMenuOpen = ref(false);
 const scrolled = ref(false);
 
 const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'Events', path: '/events' },
-  { label: 'Create Event', path: '/create-event' },
+  { label: 'nav.home', path: '/' },
+  { label: 'nav.events', path: '/events' },
+  { label: 'nav.createEvent', path: '/create-event' },
 ];
 
 const userMenuItems = [
