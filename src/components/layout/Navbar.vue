@@ -10,7 +10,7 @@
         <!-- Logo & Nav Links -->
         <div class="flex items-center space-x-8">
           <router-link to="/" class="flex items-center space-x-2">
-            <div class="w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full bg-[url(/images/DSN_Logo_screen_new.png)] flex items-center justify-center">
               <span class="text-white font-display text-xl">B</span>
             </div>
             <span class="font-display text-xl font-bold text-primary-400 hidden md:block">
