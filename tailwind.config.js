@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         'display': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'medieval': ['MedievalSharp', 'cursive']
       },
       colors: {
         'primary': {
