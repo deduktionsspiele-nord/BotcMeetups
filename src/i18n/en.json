@@ -80,6 +80,7 @@
       "participants": "Participants",
       "host": "Host",
       "player": "Player",
+      "spectator": "Zuschauer",
       "description": "Description",
       "deleteWarning": "Warning: This action cannot be undone. This will permanently delete the event \"{title}\" and remove all participants.",
       "typeDeleteConfirm": "Please type delete to confirm",
