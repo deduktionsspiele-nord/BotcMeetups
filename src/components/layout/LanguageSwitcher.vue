@@ -34,7 +34,7 @@
           class="block w-full text-left px-4 py-2 text-sm text-light-700 hover:bg-dark-700"
           :class="{ 'bg-dark-700': lang.code === currentLocale }"
         >
-          <span class="mr-2">{{ lang.flag }}</span>
+          <span class="mr-2 font-outline-2">{{ lang.flag }}</span>
           {{ lang.name }}
         </button>
       </div>
