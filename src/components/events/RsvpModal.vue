@@ -76,10 +76,12 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { format } from 'date-fns';
+import { useI18n } from 'vue-i18n';
 import { Event } from '@/types/event';
 import Button from '@/components/ui/Button.vue';
+import { formatDate, dateFormats } from '@/utils/dateFormat';
 
+const { locale } = useI18n();
 const props = defineProps<{
   event: Event
 }>();
@@ -92,7 +94,7 @@ const emit = defineEmits<{
 const selectedRole = ref('Player');
 
 const formattedDate = computed(() => {
-  return format(new Date(props.event.date), 'EEEE, MMMM d, yyyy');
+  return formatDate(props.event.date, dateFormats.eventDetails[locale.value], locale.value);
 });
 
 function confirmJoin() {

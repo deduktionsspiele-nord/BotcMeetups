@@ -94,10 +94,12 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { format } from 'date-fns';
+import { useI18n } from 'vue-i18n';
 import { Event } from '@/types/event';
 import Badge from '@/components/ui/Badge.vue';
+import { formatDate, dateFormats } from '@/utils/dateFormat';
 
+const { locale } = useI18n();
 const props = defineProps<{
   event: Event
 }>();
@@ -107,7 +109,7 @@ const spotsAvailable = computed(() =>
 );
 
 const formattedDate = computed(() => 
-  format(new Date(props.event.date), 'EEE, MMM d, yyyy - h:mm a')
+  formatDate(props.event.date, dateFormats.eventCard[locale.value], locale.value)
 );
 
 const displayedParticipants = computed(() => 
