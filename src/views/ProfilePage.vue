@@ -55,7 +55,11 @@
         <div class="col-span-12 md:col-span-9">
           <!-- Events Tab -->
           <div v-if="activeTab === 'events'" class="space-y-6">
-            <div v-if="userEvents.length > 0" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div v-if="eventsStore.isLoading" class="flex justify-center py-12">
+              <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary-500"></div>
+            </div>
+            
+            <div v-else-if="userEvents.length > 0" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <EventCard 
                 v-for="event in userEvents" 
                 :key="event.id" 
@@ -278,7 +282,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 import { useEventsStore } from '@/stores/events';
@@ -361,4 +365,8 @@ async function saveNotifications() {
     isLoading.value = false;
   }
 }
+
+onMounted(async () => {
+  await eventsStore.fetchEvents();
+});
 </script>
