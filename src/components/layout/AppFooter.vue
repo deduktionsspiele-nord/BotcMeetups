@@ -3,14 +3,12 @@
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <div class="flex items-center space-x-2 mb-4">
-            <router-link to="/" class="flex items-center space-x-2">
+          <router-link to="/" class="flex items-center space-x-2 mb-4">
             <div class="w-10 h-10 bg-contain bg-center bg-no-repeat" style="background-image: url('/src/assets/images/DSN_Logo_screen_new.png')"></div>
             <span class="font-display text-xl font-bold text-floral-500 hidden md:block">
               {{ $t('organisation.longName') }}
             </span>
           </router-link>
-          </div>
           <p class="text-sm text-light-500 mb-4">
             {{ $t('app.tagline') }}
           </p>
