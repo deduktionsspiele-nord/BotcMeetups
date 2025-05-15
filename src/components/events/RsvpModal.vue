@@ -21,7 +21,7 @@
         <div class="mb-6">
           <p class="text-light-600 mb-4">
             "{{ event.title }}"<br>
-            {{ formattedDate }}
+             {{ formattedDate }}
           </p>
           
           <div class="space-y-2">
