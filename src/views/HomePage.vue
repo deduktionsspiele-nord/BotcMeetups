@@ -1,3 +1,4 @@
+```vue
 <template>
   <div class="flex flex-col">
     <!-- Hero Section -->
@@ -15,25 +16,24 @@
       <div class="container mx-auto px-4 py-16 md:py-32 relative z-20">
         <div class="max-w-3xl">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-light-950 leading-tight">
-            <span class="text-primary-400">Blood on the Clocktower</span> <br />
-            <span class="text-accent-400">Community</span>
+            <span class="text-primary-400">{{ $t('app.name') }}</span> <br />
+            <span class="text-accent-400">{{ $t('nav.home') }}</span>
           </h1>
           
           <p class="text-xl md:text-2xl mb-8 text-light-700 leading-relaxed">
-            Connect with other players, join local games, and organize your own 
-            Blood on the Clocktower events. From beginners to experts, everyone is welcome.
+            {{ $t('app.tagline') }}
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4">
             <router-link to="/events">
               <Button size="lg">
-                Find Games Near You
+                {{ $t('events.title') }}
               </Button>
             </router-link>
             
             <router-link :to="authStore.isAuthenticated ? '/create-event' : '/register'">
               <Button variant="outline" size="lg">
-                {{ authStore.isAuthenticated ? 'Host an Event' : 'Join the Community' }}
+                {{ authStore.isAuthenticated ? $t('events.createEventCta') : $t('auth.createAccount') }}
               </Button>
             </router-link>
           </div>
@@ -52,11 +52,10 @@
     <section class="container mx-auto px-4 py-12">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-primary-400 mb-4">
-          Why Join Our Community?
+          {{ $t('profile.title') }}
         </h2>
         <p class="text-lg max-w-3xl mx-auto text-light-600">
-          Connect with fellow Blood on the Clocktower enthusiasts, find local games, 
-          and improve your skills whether you're a seasoned veteran or new to the game.
+          {{ $t('app.tagline') }}
         </p>
       </div>
       
@@ -70,9 +69,9 @@
               <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
           </div>
-          <h3 class="text-xl font-display font-bold mb-2 text-light-900">Find Events</h3>
+          <h3 class="text-xl font-display font-bold mb-2 text-light-900">{{ $t('events.title') }}</h3>
           <p class="text-light-600">
-            Discover games happening near you or create your own events to gather players.
+            {{ $t('events.subtitle') }}
           </p>
         </div>
         
@@ -83,9 +82,9 @@
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
           </div>
-          <h3 class="text-xl font-display font-bold mb-2 text-light-900">Local Communities</h3>
+          <h3 class="text-xl font-display font-bold mb-2 text-light-900">{{ $t('events.location') }}</h3>
           <p class="text-light-600">
-            Join existing groups or start your own community of BOTC players in your area.
+            {{ $t('profile.settings.locationPlaceholder') }}
           </p>
         </div>
         
@@ -98,9 +97,9 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-display font-bold mb-2 text-light-900">Find Your Role</h3>
+          <h3 class="text-xl font-display font-bold mb-2 text-light-900">{{ $t('events.details.player') }}</h3>
           <p class="text-light-600">
-            Express your preferred character roles and find games that match your playstyle.
+            {{ $t('profile.preferences.favoriteRoles') }}
           </p>
         </div>
         
@@ -111,9 +110,9 @@
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
           </div>
-          <h3 class="text-xl font-display font-bold mb-2 text-light-900">Track History</h3>
+          <h3 class="text-xl font-display font-bold mb-2 text-light-900">{{ $t('events.dateRange') }}</h3>
           <p class="text-light-600">
-            Keep a record of your games, roles played, and celebrate your victories.
+            {{ $t('events.dateOptions.today') }}
           </p>
         </div>
       </div>
@@ -124,10 +123,10 @@
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center justify-between mb-8">
           <h2 class="text-3xl font-display font-bold text-primary-400 mb-4 md:mb-0">
-            Upcoming Events
+            {{ $t('events.title') }}
           </h2>
           <router-link to="/events">
-            <Button variant="outline">View All Events</Button>
+            <Button variant="outline">{{ $t('events.title') }}</Button>
           </router-link>
         </div>
         
@@ -140,11 +139,11 @@
         </div>
         
         <div v-else class="text-center py-12 bg-dark-700 rounded-lg border border-dark-600">
-          <h3 class="text-xl font-bold mb-2">No upcoming events</h3>
-          <p class="text-light-600 mb-6">Be the first to organize a game in your area!</p>
+          <h3 class="text-xl font-bold mb-2">{{ $t('events.noEvents') }}</h3>
+          <p class="text-light-600 mb-6">{{ $t('events.noEventsDesc') }}</p>
           <router-link :to="authStore.isAuthenticated ? '/create-event' : '/login'">
             <Button>
-              {{ authStore.isAuthenticated ? "Create an Event" : "Sign in to Create Event" }}
+              {{ authStore.isAuthenticated ? $t('events.createEventCta') : $t('events.signInToCreate') }}
             </Button>
           </router-link>
         </div>
@@ -155,23 +154,22 @@
     <section class="container mx-auto px-4 py-12">
       <div class="bg-gradient-to-r from-dark-800 to-dark-700 rounded-lg p-8 md:p-12 text-center">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-primary-400 mb-6">
-          Ready to Join the Mystery?
+          {{ $t('auth.createAccount') }}
         </h2>
         <p class="text-lg max-w-3xl mx-auto mb-8 text-light-600">
-          Create an account to join events, organize your own games, and connect with 
-          other Blood on the Clocktower enthusiasts.
+          {{ $t('app.tagline') }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <template v-if="!authStore.isAuthenticated">
             <router-link to="/register">
-              <Button size="lg">Sign Up Now</Button>
+              <Button size="lg">{{ $t('auth.signUp') }}</Button>
             </router-link>
             <router-link to="/login">
-              <Button variant="outline" size="lg">Sign In</Button>
+              <Button variant="outline" size="lg">{{ $t('auth.signIn') }}</Button>
             </router-link>
           </template>
           <router-link v-else to="/create-event">
-            <Button size="lg">Create an Event</Button>
+            <Button size="lg">{{ $t('events.createEventCta') }}</Button>
           </router-link>
         </div>
       </div>
@@ -195,3 +193,4 @@ onMounted(async () => {
   await eventsStore.fetchEvents();
 });
 </script>
+```
