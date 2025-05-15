@@ -6,7 +6,7 @@
       aria-haspopup="true"
       :aria-expanded="isOpen"
     >
-      <span class="text-sm">{{ currentLanguage }}</span>
+      <div class="inline-block p-2 bg-color-white"><span class="text-sm">{{ currentLanguage }}</span>
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
         class="h-4 w-4" 
