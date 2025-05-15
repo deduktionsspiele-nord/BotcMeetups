@@ -3,7 +3,6 @@ import { ref, computed } from 'vue'
 import { User } from '@/types/user'
 import { useToastStore } from '@/stores/toast'
 
-// In a real app, this would connect to Supabase or Firebase Auth
 export const useAuthStore = defineStore('auth', () => {
   const toastStore = useToastStore()
   
@@ -31,6 +30,10 @@ export const useAuthStore = defineStore('auth', () => {
   async function login(email: string, password: string) {
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // POST /api/v1/auth/login
+      // Body: { email, password }
+      
       // Mock login - in real app, this would call an auth service
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 800))
@@ -60,6 +63,10 @@ export const useAuthStore = defineStore('auth', () => {
   async function register(email: string, password: string, displayName: string) {
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // POST /api/v1/auth/register
+      // Body: { email, password, displayName }
+      
       // Mock registration - in real app, this would call an auth service
       await new Promise(resolve => setTimeout(resolve, 1000))
       
@@ -94,6 +101,10 @@ export const useAuthStore = defineStore('auth', () => {
     if (!user.value) return false
     
     try {
+      // TODO: Replace with actual API call
+      // PUT /api/v1/users/me
+      // Body: profile
+      
       // Mock profile update
       await new Promise(resolve => setTimeout(resolve, 500))
       

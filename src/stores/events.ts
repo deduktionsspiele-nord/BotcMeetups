@@ -109,6 +109,10 @@ export const useEventsStore = defineStore('events', () => {
   async function fetchEvents() {
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // GET /api/v1/events
+      // Query params: filters
+      
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 500))
       // Events are already loaded from mock data
@@ -125,6 +129,9 @@ export const useEventsStore = defineStore('events', () => {
   async function fetchEventById(id: string) {
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // GET /api/v1/events/{id}
+      
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 300))
       return getEventById.value(id)
@@ -145,6 +152,10 @@ export const useEventsStore = defineStore('events', () => {
     
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // POST /api/v1/events
+      // Body: eventData
+      
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 800))
       
@@ -181,6 +192,10 @@ export const useEventsStore = defineStore('events', () => {
   async function updateEvent(id: string, updates: Partial<Event>) {
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // PUT /api/v1/events/{id}
+      // Body: updates
+      
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 500))
       
@@ -208,6 +223,9 @@ export const useEventsStore = defineStore('events', () => {
   async function deleteEvent(id: string) {
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // DELETE /api/v1/events/{id}
+      
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 500))
       
@@ -236,6 +254,10 @@ export const useEventsStore = defineStore('events', () => {
     
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // POST /api/v1/events/{id}/join
+      // Body: { role }
+      
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 500))
       
@@ -289,6 +311,9 @@ export const useEventsStore = defineStore('events', () => {
     
     isLoading.value = true
     try {
+      // TODO: Replace with actual API call
+      // POST /api/v1/events/{id}/leave
+      
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 500))
       
