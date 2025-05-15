@@ -10,8 +10,7 @@
         <!-- Logo & Nav Links -->
         <div class="flex items-center space-x-8">
           <router-link to="/" class="flex items-center space-x-2">
-            <div class="w-10 h-10 rounded-full bg-[url(/assets/images/DSN_Logo_screen_new.png)] flex items-center justify-center">
-            </div>
+            <div class="w-10 h-10 bg-contain bg-center bg-no-repeat" style="background-image: url('/src/assets/images/DSN_Logo_screen_new.png')"></div>
             <span class="font-display text-xl font-bold text-primary-400 hidden md:block">
               {{ $t('app.name') }}
             </span>
