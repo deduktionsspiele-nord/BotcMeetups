@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['Middle Saxony Text', 'Playfair Display', 'serif'],
+        'display': ['Middle Saxony Text', 'serif'],
         'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
