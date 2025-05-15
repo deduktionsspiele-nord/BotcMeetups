@@ -3,6 +3,9 @@
     "name": "BloodMeetup",
     "tagline": "Connect with Blood on the Clocktower players in your area, organize games, and join the community."
   },
+  "organisation": {
+      "longName": "Deduktionsspiele Nord"
+  },
   "nav": {
     "home": "Home",
     "events": "Events",
