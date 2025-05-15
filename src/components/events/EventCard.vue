@@ -17,7 +17,7 @@
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
           <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
         </svg>
-        <span class="text-xs font-medium">Private</span>
+        <span class="text-xs font-medium">{{ $t('events.details.private') }}</span>
       </div>
       
       <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark-900 to-transparent h-24"></div>
@@ -33,7 +33,7 @@
             :variant="spotsAvailable > 0 ? 'success' : 'error'"
             class="ml-2 mt-1"
           >
-            {{ spotsAvailable > 0 ? `${spotsAvailable} spots left` : 'Full' }}
+            {{ spotsAvailable > 0 ? $t('events.spots.left', { count: spotsAvailable }) : $t('events.spots.full') }}
           </Badge>
         </div>
         
@@ -64,13 +64,13 @@
             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-          <span class="text-sm">{{ event.currentPlayers }} / {{ event.maxPlayers }} players</span>
+          <span class="text-sm">{{ event.currentPlayers }} / {{ event.maxPlayers }} {{ $t('events.details.player').toLowerCase() }}</span>
         </div>
       </div>
       
       <div class="pt-3 border-t border-dark-600 flex justify-between items-center mt-2">
         <span class="text-sm font-medium text-primary-400 group-hover:text-primary-300 transition-colors">
-          View Details
+          {{ $t('events.details.viewDetails') }}
         </span>
         
         <div class="flex -space-x-2">

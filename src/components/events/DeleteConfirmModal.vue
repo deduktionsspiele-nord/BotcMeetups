@@ -6,7 +6,7 @@
     >
       <div class="p-6">
         <div class="flex justify-between items-start mb-2">
-          <h3 class="text-xl font-bold text-light-900">Delete Event</h3>
+          <h3 class="text-xl font-bold text-light-900">{{ $t('events.details.deleteEvent') }}</h3>
           <button 
             @click="$emit('close')"
             class="text-light-500 hover:text-light-900 transition-colors"
@@ -26,30 +26,30 @@
               <line x1="12" y1="17" x2="12.01" y2="17"></line>
             </svg>
             <div class="text-sm text-light-900">
-              <strong>Warning:</strong> This action cannot be undone. This will permanently delete the event "{{ eventTitle }}" and remove all participants.
+              <strong>{{ $t('common.warning') }}:</strong> {{ $t('events.details.deleteWarning', { title: eventTitle }) }}
             </div>
           </div>
           
           <p class="text-light-600">
-            Please type <strong class="text-light-900">delete</strong> to confirm.
+            {{ $t('events.details.typeDeleteConfirm') }}
           </p>
           
           <input
             type="text"
             v-model="confirmText"
-            placeholder="Type 'delete' to confirm"
+            :placeholder="$t('events.details.typeDeleteConfirm')"
             class="input mt-3"
           />
         </div>
         
         <div class="flex justify-end space-x-3">
-          <Button variant="outline" @click="$emit('close')">Cancel</Button>
+          <Button variant="outline" @click="$emit('close')">{{ $t('common.cancel') }}</Button>
           <Button 
             :disabled="confirmText !== 'delete'"
             :class="confirmText === 'delete' ? 'bg-error-600 hover:bg-error-700' : ''"
             @click="$emit('confirm')"
           >
-            Delete Event
+            {{ $t('events.details.deleteEvent') }}
           </Button>
         </div>
       </div>

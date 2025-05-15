@@ -6,7 +6,7 @@
     >
       <div class="p-6">
         <div class="flex justify-between items-start mb-4">
-          <h3 class="text-xl font-bold text-light-900">Join Event</h3>
+          <h3 class="text-xl font-bold text-light-900">{{ $t('events.details.rsvp') }}</h3>
           <button 
             @click="$emit('close')"
             class="text-light-500 hover:text-light-900 transition-colors"
@@ -20,7 +20,7 @@
         
         <div class="mb-6">
           <p class="text-light-600 mb-4">
-            You're joining "{{ event.title }}" on {{ formattedDate }}. Please select your preferred role:
+            {{ $t('events.create.eventTitle') }} "{{ event.title }}" {{ $t('events.dateOptions.today') }} {{ formattedDate }}
           </p>
           
           <div class="space-y-2">
@@ -33,7 +33,7 @@
                 class="text-primary-600 focus:ring-primary-500 h-4 w-4 border-dark-500"
               />
               <label for="player" class="ml-2 text-light-900">
-                Player
+                {{ $t('events.details.player') }}
               </label>
             </div>
             
@@ -46,7 +46,7 @@
                 class="text-primary-600 focus:ring-primary-500 h-4 w-4 border-dark-500"
               />
               <label for="storyteller" class="ml-2 text-light-900">
-                Storyteller
+                {{ $t('events.details.host') }}
               </label>
             </div>
             
@@ -59,15 +59,15 @@
                 class="text-primary-600 focus:ring-primary-500 h-4 w-4 border-dark-500"
               />
               <label for="spectator" class="ml-2 text-light-900">
-                Spectator
+                {{ $t('events.details.spectator') }}
               </label>
             </div>
           </div>
         </div>
         
         <div class="flex justify-end space-x-3">
-          <Button variant="outline" @click="$emit('close')">Cancel</Button>
-          <Button @click="confirmJoin">Join Event</Button>
+          <Button variant="outline" @click="$emit('close')">{{ $t('common.cancel') }}</Button>
+          <Button @click="confirmJoin">{{ $t('events.details.rsvp') }}</Button>
         </div>
       </div>
     </div>
