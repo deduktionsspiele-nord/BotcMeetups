@@ -1,0 +1,75 @@
+{
+  "app": {
+    "name": "BloodMeetup",
+    "tagline": "Verbinde dich mit Blood on the Clocktower Spielern in deiner Nähe, organisiere Spiele und werde Teil der Community."
+  },
+  "nav": {
+    "home": "Startseite",
+    "events": "Events",
+    "createEvent": "Event erstellen",
+    "profile": "Profil",
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "logout": "Abmelden"
+  },
+  "auth": {
+    "welcome": "Willkommen zurück",
+    "loginPrompt": "Melde dich an, um an Events teilzunehmen und dich mit anderen Spielern zu verbinden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "rememberMe": "Angemeldet bleiben",
+    "noAccount": "Noch kein Konto?",
+    "signUp": "Registrieren",
+    "createAccount": "Konto erstellen",
+    "displayName": "Anzeigename",
+    "confirmPassword": "Passwort bestätigen",
+    "acceptTerms": "Ich stimme den",
+    "termsOfService": "Nutzungsbedingungen",
+    "and": "und der",
+    "privacyPolicy": "Datenschutzerklärung zu",
+    "haveAccount": "Bereits ein Konto?",
+    "signIn": "Anmelden"
+  },
+  "events": {
+    "title": "Events finden",
+    "subtitle": "Entdecke Blood on the Clocktower Spiele in deiner Nähe oder erstelle deine eigenen",
+    "createNew": "Neues Event erstellen",
+    "search": "Nach Titel oder Ort suchen...",
+    "filters": "Filter",
+    "reset": "Zurücksetzen",
+    "location": "Ort",
+    "dateRange": "Zeitraum",
+    "eventType": "Event-Typ",
+    "availability": "Verfügbarkeit",
+    "hasSpots": "Hat freie Plätze",
+    "apply": "Filter anwenden",
+    "clear": "Löschen",
+    "noEvents": "Keine Events gefunden",
+    "noEventsDesc": "Wir konnten keine Events finden, die deinen Kriterien entsprechen. Versuche die Filter anzupassen oder erstelle dein eigenes Event!",
+    "createEventCta": "Event erstellen",
+    "signInToCreate": "Anmelden um Event zu erstellen",
+    "spots": {
+      "left": "{count} Plätze frei",
+      "full": "Ausgebucht"
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "resources": "Ressourcen",
+    "about": "Über uns",
+    "officialSite": "Offizielle Spieleseite",
+    "gameplayRules": "Spielregeln",
+    "characterGuides": "Charakterführer",
+    "storytellerResources": "Spielleiter-Ressourcen",
+    "aboutUs": "Über uns",
+    "contact": "Kontakt",
+    "copyright": "© {year} BloodMeetup. Alle Rechte vorbehalten.",
+    "trademark": "Blood on the Clocktower ist eine Marke von The Pandemonium Institute."
+  },
+  "language": {
+    "select": "Sprache auswählen",
+    "en": "English",
+    "de": "Deutsch"
+  }
+}

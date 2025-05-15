@@ -14,7 +14,8 @@
     "pinia": "^2.1.7",
     "date-fns": "^2.30.0",
     "@vueuse/core": "^10.6.1",
-    "@supabase/supabase-js": "^2.39.0"
+    "@supabase/supabase-js": "^2.39.0",
+    "vue-i18n": "^9.8.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
