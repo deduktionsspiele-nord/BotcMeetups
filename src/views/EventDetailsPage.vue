@@ -1,3 +1,4 @@
+```vue
 <template>
   <div class="container mx-auto px-4 py-8">
     <div v-if="isLoading" class="flex justify-center items-center py-20">
@@ -10,12 +11,12 @@
         <line x1="12" y1="8" x2="12" y2="12"></line>
         <line x1="12" y1="16" x2="12.01" y2="16"></line>
       </svg>
-      <h3 class="text-xl font-bold mb-2">Event Not Found</h3>
+      <h3 class="text-xl font-bold mb-2">{{ $t('events.noEvents') }}</h3>
       <p class="text-light-600 mb-6">
-        We couldn't find the event you're looking for. It may have been deleted or never existed.
+        {{ $t('events.noEventsDesc') }}
       </p>
       <router-link to="/events">
-        <Button>Back to Events</Button>
+        <Button>{{ $t('events.title') }}</Button>
       </router-link>
     </div>
     
@@ -35,7 +36,7 @@
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
               </svg>
-              <span class="text-sm font-medium">Private Event</span>
+              <span class="text-sm font-medium">{{ $t('events.details.private') }}</span>
             </div>
           </div>
         </div>
@@ -57,14 +58,14 @@
                   <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                   <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                 </svg>
-                {{ showEditMode ? 'Cancel Edit' : 'Edit Event' }}
+                {{ showEditMode ? $t('events.details.cancelEdit') : $t('events.details.editEvent') }}
               </Button>
               
               <Button 
                 v-if="!isParticipant && !isFull" 
                 @click="showRsvpModal = true"
               >
-                RSVP to Event
+                {{ $t('events.details.rsvp') }}
               </Button>
               
               <Button 
@@ -72,7 +73,7 @@
                 variant="outline"
                 @click="leaveEvent"
               >
-                Leave Event
+                {{ $t('events.details.leave') }}
               </Button>
             </div>
           </div>
@@ -111,26 +112,26 @@
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
-              <span>{{ event.currentPlayers }} / {{ event.maxPlayers }} players</span>
+              <span>{{ event.currentPlayers }} / {{ event.maxPlayers }} {{ $t('events.details.player').toLowerCase() }}</span>
               <Badge
                 v-if="isFull"
                 variant="error"
                 class="ml-2"
               >
-                Full
+                {{ $t('events.spots.full') }}
               </Badge>
               <Badge
                 v-else
                 variant="success"
                 class="ml-2"
               >
-                {{ event.maxPlayers - event.currentPlayers }} spots left
+                {{ $t('events.spots.left', { count: event.maxPlayers - event.currentPlayers }) }}
               </Badge>
             </div>
           </div>
           
           <div class="mb-6">
-            <h3 class="text-xl font-bold mb-2">Description</h3>
+            <h3 class="text-xl font-bold mb-2">{{ $t('events.details.description') }}</h3>
             <p class="text-light-600 leading-relaxed">{{ event.description }}</p>
           </div>
           
@@ -141,14 +142,14 @@
                 <polyline points="16 6 12 2 8 6"></polyline>
                 <line x1="12" y1="2" x2="12" y2="15"></line>
               </svg>
-              Share
+              {{ $t('events.details.share') }}
             </Button>
             
             <Button variant="outline" class="!px-3 text-sm">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
               </svg>
-              Save
+              {{ $t('events.details.save') }}
             </Button>
             
             <Button 
@@ -163,7 +164,7 @@
                 <line x1="10" y1="11" x2="10" y2="17"></line>
                 <line x1="14" y1="11" x2="14" y2="17"></line>
               </svg>
-              Delete
+              {{ $t('events.details.delete') }}
             </Button>
           </div>
         </div>
@@ -172,7 +173,7 @@
       <!-- Participants Section -->
       <div class="bg-dark-800 rounded-lg border border-dark-700 p-6 mb-8">
         <div class="flex justify-between items-center mb-4">
-          <h2 class="text-xl font-bold">Participants</h2>
+          <h2 class="text-xl font-bold">{{ $t('events.details.participants') }}</h2>
           <Badge variant="primary">{{ event.currentPlayers }} / {{ event.maxPlayers }}</Badge>
         </div>
         
@@ -192,7 +193,7 @@
             <div class="flex-1 min-w-0">
               <div class="flex items-center">
                 <span class="font-medium truncate">{{ participant.displayName }}</span>
-                <Badge v-if="participant.isHost" variant="accent" class="ml-2">Host</Badge>
+                <Badge v-if="participant.isHost" variant="accent" class="ml-2">{{ $t('events.details.host') }}</Badge>
               </div>
               <div class="text-sm text-light-500">{{ participant.role }}</div>
             </div>
@@ -317,3 +318,4 @@ async function deleteEvent() {
 
 onMounted(fetchEventDetails);
 </script>
+```

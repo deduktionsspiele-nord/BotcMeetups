@@ -1,9 +1,10 @@
+```vue
 <template>
   <div class="container mx-auto px-4 py-8">
     <div class="mb-8">
-      <h1 class="text-3xl md:text-4xl font-display font-bold text-primary-400 mb-2">Create Event</h1>
+      <h1 class="text-3xl md:text-4xl font-display font-bold text-primary-400 mb-2">{{ $t('events.create.title') }}</h1>
       <p class="text-light-600">
-        Organize a Blood on the Clocktower game and invite players to join
+        {{ $t('events.create.subtitle') }}
       </p>
     </div>
     
@@ -13,7 +14,7 @@
           <!-- Event Title -->
           <div>
             <label for="title" class="block text-sm font-medium text-light-700 mb-1">
-              Event Title *
+              {{ $t('events.create.eventTitle') }} *
             </label>
             <input
               id="title"
@@ -21,14 +22,14 @@
               type="text"
               required
               class="input"
-              placeholder="e.g., Beginner-Friendly BOTC Night"
+              :placeholder="$t('events.create.eventTitlePlaceholder')"
             />
           </div>
           
           <!-- Description -->
           <div>
             <label for="description" class="block text-sm font-medium text-light-700 mb-1">
-              Description *
+              {{ $t('events.details.description') }} *
             </label>
             <textarea
               id="description"
@@ -36,7 +37,7 @@
               rows="4"
               required
               class="input"
-              placeholder="Describe your event, what to expect, etc."
+              :placeholder="$t('events.create.descriptionPlaceholder')"
             ></textarea>
           </div>
           
@@ -44,7 +45,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label for="date" class="block text-sm font-medium text-light-700 mb-1">
-                Date *
+                {{ $t('events.create.date') }} *
               </label>
               <input
                 id="date"
@@ -57,7 +58,7 @@
             </div>
             <div>
               <label for="time" class="block text-sm font-medium text-light-700 mb-1">
-                Time *
+                {{ $t('events.create.time') }} *
               </label>
               <input
                 id="time"
@@ -72,7 +73,7 @@
           <!-- Location -->
           <div>
             <label for="location" class="block text-sm font-medium text-light-700 mb-1">
-              Location *
+              {{ $t('events.location') }} *
             </label>
             <input
               id="location"
@@ -80,31 +81,31 @@
               type="text"
               required
               class="input"
-              placeholder="e.g., Game Haven Board Game Café"
+              :placeholder="$t('events.create.locationPlaceholder')"
             />
           </div>
           
           <!-- Address -->
           <div>
             <label for="address" class="block text-sm font-medium text-light-700 mb-1">
-              Address
+              {{ $t('events.create.address') }}
             </label>
             <input
               id="address"
               v-model="form.address"
               type="text"
               class="input"
-              placeholder="Street address for the venue"
+              :placeholder="$t('events.create.addressPlaceholder')"
             />
             <p class="mt-1 text-sm text-light-500">
-              Optional. Will only be shown to confirmed participants.
+              {{ $t('events.create.addressNote') }}
             </p>
           </div>
           
           <!-- Max Players -->
           <div>
             <label for="maxPlayers" class="block text-sm font-medium text-light-700 mb-1">
-              Maximum Players *
+              {{ $t('events.create.maxPlayers') }} *
             </label>
             <input
               id="maxPlayers"
@@ -116,31 +117,31 @@
               class="input"
             />
             <p class="mt-1 text-sm text-light-500">
-              Recommended: 7-15 players for optimal gameplay.
+              {{ $t('events.create.maxPlayersNote') }}
             </p>
           </div>
           
           <!-- Image URL -->
           <div>
             <label for="image" class="block text-sm font-medium text-light-700 mb-1">
-              Image URL
+              {{ $t('events.create.imageUrl') }}
             </label>
             <input
               id="image"
               v-model="form.image"
               type="url"
               class="input"
-              placeholder="https://example.com/image.jpg"
+              :placeholder="$t('events.create.imageUrlPlaceholder')"
             />
             <p class="mt-1 text-sm text-light-500">
-              Optional. Add an image URL to customize your event.
+              {{ $t('events.create.imageUrlNote') }}
             </p>
           </div>
           
           <!-- Visibility -->
           <div>
             <span class="block text-sm font-medium text-light-700 mb-1">
-              Event Visibility *
+              {{ $t('events.create.visibility') }} *
             </span>
             <div class="space-y-2">
               <div class="flex items-center">
@@ -153,7 +154,7 @@
                   class="text-primary-600 focus:ring-primary-500 h-4 w-4 border-dark-500"
                 />
                 <label for="public" class="ml-2 block text-sm text-light-900">
-                  Public - Anyone can view and join this event
+                  {{ $t('events.create.visibilityPublic') }}
                 </label>
               </div>
               <div class="flex items-center">
@@ -166,7 +167,7 @@
                   class="text-primary-600 focus:ring-primary-500 h-4 w-4 border-dark-500"
                 />
                 <label for="private" class="ml-2 block text-sm text-light-900">
-                  Private - Only people with the link can view and join
+                  {{ $t('events.create.visibilityPrivate') }}
                 </label>
               </div>
             </div>
@@ -174,10 +175,10 @@
           
           <div class="flex justify-between pt-4 border-t border-dark-600">
             <Button type="button" variant="outline" @click="router.push('/events')">
-              Cancel
+              {{ $t('common.cancel') }}
             </Button>
             <Button type="submit" :loading="isLoading">
-              Create Event
+              {{ $t('common.create') }}
             </Button>
           </div>
         </div>
@@ -236,3 +237,4 @@ async function createEvent() {
   }
 }
 </script>
+```
