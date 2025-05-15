@@ -29,7 +29,10 @@
     "and": "und der",
     "privacyPolicy": "Datenschutzerklärung zu",
     "haveAccount": "Bereits ein Konto?",
-    "signIn": "Anmelden"
+    "signIn": "Anmelden",
+    "demoAccount": "Demo-Konto",
+    "demoAccountDesc": "Zu Testzwecken können Sie eine beliebige E-Mail und ein beliebiges Passwort verwenden.",
+    "passwordMismatch": "Passwörter stimmen nicht überein"
   },
   "events": {
     "title": "Events finden",
@@ -52,6 +55,105 @@
     "spots": {
       "left": "{count} Plätze frei",
       "full": "Ausgebucht"
+    },
+    "dateOptions": {
+      "anyDate": "Beliebiges Datum",
+      "today": "Heute",
+      "thisWeek": "Diese Woche",
+      "thisMonth": "Dieser Monat",
+      "nextMonth": "Nächster Monat"
+    },
+    "typeOptions": {
+      "all": "Alle Events",
+      "public": "Nur öffentliche",
+      "private": "Nur private"
+    },
+    "details": {
+      "deleteEvent": "Event löschen",
+      "editEvent": "Event bearbeiten",
+      "cancelEdit": "Bearbeitung abbrechen",
+      "rsvp": "Am Event teilnehmen",
+      "leave": "Event verlassen",
+      "share": "Teilen",
+      "save": "Speichern",
+      "delete": "Löschen",
+      "participants": "Teilnehmer",
+      "host": "Gastgeber",
+      "player": "Spieler",
+      "description": "Beschreibung",
+      "deleteWarning": "Warnung: Diese Aktion kann nicht rückgängig gemacht werden. Das Event \"{title}\" wird dauerhaft gelöscht und alle Teilnehmer werden entfernt.",
+      "typeDeleteConfirm": "Bitte geben Sie 'delete' ein zur Bestätigung",
+      "private": "Privates Event",
+      "viewDetails": "Details anzeigen"
+    },
+    "create": {
+      "title": "Event erstellen",
+      "subtitle": "Organisiere ein Blood on the Clocktower Spiel und lade Spieler ein",
+      "eventTitle": "Event-Titel",
+      "eventTitlePlaceholder": "z.B. Anfängerfreundliche BOTC-Nacht",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Beschreibe dein Event, was zu erwarten ist, etc.",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "location": "Ort",
+      "locationPlaceholder": "z.B. Spielecafé Haven",
+      "address": "Adresse",
+      "addressPlaceholder": "Straßenadresse des Veranstaltungsortes",
+      "addressNote": "Optional. Wird nur bestätigten Teilnehmern angezeigt.",
+      "maxPlayers": "Maximale Spieleranzahl",
+      "maxPlayersNote": "Empfohlen: 7-15 Spieler für optimales Gameplay.",
+      "imageUrl": "Bild-URL",
+      "imageUrlPlaceholder": "https://beispiel.de/bild.jpg",
+      "imageUrlNote": "Optional. Füge eine Bild-URL hinzu, um dein Event anzupassen.",
+      "visibility": "Event-Sichtbarkeit",
+      "visibilityPublic": "Öffentlich - Jeder kann das Event sehen und beitreten",
+      "visibilityPrivate": "Privat - Nur Personen mit dem Link können das Event sehen und beitreten",
+      "cancel": "Abbrechen"
+    }
+  },
+  "profile": {
+    "title": "Dein Profil",
+    "subtitle": "Verwalte deine Einstellungen und siehe deine Blood on the Clocktower Aktivitäten",
+    "signInRequired": "Bitte melde dich an",
+    "signInRequiredDesc": "Du musst angemeldet sein, um dein Profil zu sehen.",
+    "tabs": {
+      "events": "Meine Events",
+      "profile": "Profileinstellungen",
+      "notifications": "Benachrichtigungen"
+    },
+    "yourEvents": "Deine Events",
+    "noEventsYet": "Noch keine Events",
+    "noEventsYetDesc": "Du hast noch keine Events erstellt oder bist keinem beigetreten.",
+    "findEvents": "Events finden",
+    "settings": {
+      "profileSettings": "Profileinstellungen",
+      "displayName": "Anzeigename",
+      "email": "E-Mail-Adresse",
+      "emailNote": "E-Mail-Adresse kann derzeit nicht geändert werden.",
+      "bio": "Biografie",
+      "bioPlaceholder": "Erzähle anderen von deiner Blood on the Clocktower Erfahrung...",
+      "location": "Standort",
+      "locationPlaceholder": "Stadt, Bundesland",
+      "saveChanges": "Änderungen speichern"
+    },
+    "preferences": {
+      "title": "Spieleinstellungen",
+      "experienceLevel": "Erfahrungslevel",
+      "beginner": "Anfänger - Neu bei Blood on the Clocktower",
+      "intermediate": "Fortgeschritten - Mehrere Spiele gespielt",
+      "expert": "Experte - Erfahrener Spieler",
+      "favoriteRoles": "Lieblingsrollen",
+      "savePreferences": "Einstellungen speichern"
+    },
+    "notifications": {
+      "title": "Benachrichtigungseinstellungen",
+      "email": "E-Mail-Benachrichtigungen",
+      "emailDesc": "Erhalte Benachrichtigungen über deine Events per E-Mail",
+      "reminders": "Event-Erinnerungen",
+      "remindersDesc": "Erhalte Erinnerungen für Events, an denen du teilnimmst",
+      "newEvents": "Neue lokale Events",
+      "newEventsDesc": "Werde benachrichtigt, wenn neue Events in deiner Nähe erstellt werden",
+      "saveSettings": "Einstellungen speichern"
     }
   },
   "footer": {
@@ -71,5 +173,20 @@
     "select": "Sprache auswählen",
     "en": "English",
     "de": "Deutsch"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "warning": "Warnung",
+    "info": "Info",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "update": "Aktualisieren",
+    "required": "Erforderlich",
+    "optional": "Optional"
   }
 }
