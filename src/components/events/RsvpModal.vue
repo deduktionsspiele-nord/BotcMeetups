@@ -20,7 +20,7 @@
         
         <div class="mb-6">
           <p class="text-light-600 mb-4">
-            {{ $t('events.create.eventTitle') }} "{{ event.title }}" {{ formattedDate }}
+            "{{ event.title }}" {{ formattedDate }}
           </p>
           
           <div class="space-y-2">
