@@ -9,7 +9,7 @@
     <span class="font-display text-xl font-bold text-floral-500 hidden md:block">
       {{ $t('organisation.longName') }}
     </span>
-    <span class="font-display text-xl font-bold text-floral-500 hidden sm:block">
+    <span class="font-display text-xl font-bold text-floral-500 md:hidden">
       {{ $t('organisation.veryShortName') }}
     </span>
   </a>
