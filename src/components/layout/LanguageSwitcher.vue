@@ -34,6 +34,7 @@
           class="block w-full text-left px-4 py-2 text-sm text-light-700 hover:bg-dark-700"
           :class="{ 'bg-dark-700': lang.code === currentLocale }"
         >
+          <span class="mr-2">{{ lang.flag }}</span>
           {{ lang.name }}
         </button>
       </div>
@@ -49,15 +50,15 @@ const i18n = useI18n();
 const isOpen = ref(false);
 
 const availableLanguages = [
-  { code: 'en', name: 'English' },
-  { code: 'de', name: 'Deutsch' }
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' }
 ];
 
 const currentLocale = computed(() => i18n.locale.value);
 
 const currentLanguage = computed(() => {
   const lang = availableLanguages.find(l => l.code === currentLocale.value);
-  return lang?.name || 'English';
+  return lang ? `${lang.flag} ${lang.name}` : 'English';
 });
 
 function changeLanguage(locale: string) {
