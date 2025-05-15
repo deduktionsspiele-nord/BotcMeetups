@@ -1,4 +1,3 @@
-```vue
 <template>
   <div class="container mx-auto px-4 py-8">
     <div v-if="isLoading" class="flex justify-center items-center py-20">
@@ -223,7 +222,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { format } from 'date-fns';
+import { useI18n } from 'vue-i18n';
 import { useEventsStore } from '@/stores/events';
 import { useAuthStore } from '@/stores/auth';
 import { useToastStore } from '@/stores/toast';
@@ -231,7 +230,9 @@ import Button from '@/components/ui/Button.vue';
 import Badge from '@/components/ui/Badge.vue';
 import RsvpModal from '@/components/events/RsvpModal.vue';
 import DeleteConfirmModal from '@/components/events/DeleteConfirmModal.vue';
+import { formatDate, dateFormats } from '@/utils/dateFormat';
 
+const { locale } = useI18n();
 const route = useRoute();
 const router = useRouter();
 const eventsStore = useEventsStore();
@@ -249,12 +250,12 @@ const showEditMode = ref(false);
 
 const formattedDate = computed(() => {
   if (!event.value) return '';
-  return format(new Date(event.value.date), 'EEEE, MMMM d, yyyy');
+  return formatDate(event.value.date, dateFormats.eventDetails[locale.value], locale.value);
 });
 
 const formattedTime = computed(() => {
   if (!event.value) return '';
-  return format(new Date(event.value.date), 'h:mm a');
+  return formatDate(event.value.date, dateFormats.time[locale.value], locale.value);
 });
 
 const isHost = computed(() => {
@@ -318,4 +319,3 @@ async function deleteEvent() {
 
 onMounted(fetchEventDetails);
 </script>
-```
