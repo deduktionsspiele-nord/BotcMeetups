@@ -16,7 +16,7 @@
         <div class="max-w-3xl">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-medieval font-bold mb-6 text-light-950 leading-tight">
             <span class="text-floral-500">Blood on the Clocktower</span> <br />
-            <span class="font-display text-accent-400">Hamburg</span>
+            <span class="text-accent-400">Hamburg</span>
           </h1>
           
           <p class="text-xl md:text-2xl mb-8 text-light-700 leading-relaxed">
