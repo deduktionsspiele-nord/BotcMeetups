@@ -4,7 +4,7 @@ import { Event } from '@/types/event'
 const eventImages = [
   'https://images.pexels.com/photos/5480855/pexels-photo-5480855.jpeg?auto=compress&cs=tinysrgb&w=800',
   'https://images.pexels.com/photos/6200049/pexels-photo-6200049.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'https://images.pexels.com/photos/2034494/pexels-photo-2034494.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/1276314/pexels-photo-1276314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   'https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&w=800',
   'https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=800',
   'https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=800'
