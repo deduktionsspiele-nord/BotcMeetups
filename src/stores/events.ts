@@ -9,11 +9,10 @@ export const useEventsStore = defineStore('events', () => {
   const toastStore = useToastStore()
   const authStore = useAuthStore()
   
-  // State
+  // TODO replace mock data with actual backend data
   const events = ref<Event[]>([...mockEvents])
   const isLoading = ref(false)
   
-  // Getters
   const allEvents = computed(() => events.value)
   
   const upcomingEvents = computed(() => {
@@ -39,29 +38,25 @@ export const useEventsStore = defineStore('events', () => {
   
   const filteredEvents = computed(() => {
     return (filters: EventFilters) => {
+      // TODO replace with backend filtering using query parameters
       return events.value.filter(event => {
-        // Filter by search term
         if (filters.searchTerm && !event.title.toLowerCase().includes(filters.searchTerm.toLowerCase()) && 
             !event.location.toLowerCase().includes(filters.searchTerm.toLowerCase())) {
           return false
         }
         
-        // Filter by location
         if (filters.location && !event.location.toLowerCase().includes(filters.location.toLowerCase())) {
           return false
         }
         
-        // Filter by public/private
         if (filters.isPublic !== null && event.isPublic !== filters.isPublic) {
           return false
         }
         
-        // Filter by available spots
         if (filters.hasAvailableSpots && event.currentPlayers >= event.maxPlayers) {
           return false
         }
         
-        // Filter by date range
         if (filters.dateRange) {
           const eventDate = new Date(event.date)
           const now = new Date()
@@ -105,13 +100,11 @@ export const useEventsStore = defineStore('events', () => {
     }
   })
   
-  // Actions
   async function fetchEvents() {
     isLoading.value = true
     try {
-      // In a real app, this would be an API call
+      // TODO replace with /events endpoint call
       await new Promise(resolve => setTimeout(resolve, 500))
-      // Events are already loaded from mock data
       return true
     } catch (error) {
       console.error('Failed to fetch events', error)
@@ -125,7 +118,7 @@ export const useEventsStore = defineStore('events', () => {
   async function fetchEventById(id: string) {
     isLoading.value = true
     try {
-      // In a real app, this would be an API call
+      // TODO replace with /events/{id} endpoint call
       await new Promise(resolve => setTimeout(resolve, 300))
       return getEventById.value(id)
     } catch (error) {
@@ -145,14 +138,14 @@ export const useEventsStore = defineStore('events', () => {
     
     isLoading.value = true
     try {
-      // In a real app, this would be an API call
+      // TODO replace with POST /events endpoint call
       await new Promise(resolve => setTimeout(resolve, 800))
       
       const newEvent: Event = {
         id: crypto.randomUUID(),
         createdAt: new Date().toISOString(),
         createdById: authStore.user.id,
-        currentPlayers: 1, // Creator counts as first player
+        currentPlayers: 1,
         participants: [
           {
             userId: authStore.user.id,
@@ -181,7 +174,7 @@ export const useEventsStore = defineStore('events', () => {
   async function updateEvent(id: string, updates: Partial<Event>) {
     isLoading.value = true
     try {
-      // In a real app, this would be an API call
+      // TODO replace with PUT /events/{id} endpoint call
       await new Promise(resolve => setTimeout(resolve, 500))
       
       const index = events.value.findIndex(e => e.id === id)
@@ -208,7 +201,7 @@ export const useEventsStore = defineStore('events', () => {
   async function deleteEvent(id: string) {
     isLoading.value = true
     try {
-      // In a real app, this would be an API call
+      // TODO replace with DELETE /events/{id} endpoint call
       await new Promise(resolve => setTimeout(resolve, 500))
       
       const index = events.value.findIndex(e => e.id === id)
@@ -236,7 +229,7 @@ export const useEventsStore = defineStore('events', () => {
     
     isLoading.value = true
     try {
-      // In a real app, this would be an API call
+      // TODO replace with POST /events/{id}/join endpoint call
       await new Promise(resolve => setTimeout(resolve, 500))
       
       const index = events.value.findIndex(e => e.id === eventId)
@@ -246,19 +239,16 @@ export const useEventsStore = defineStore('events', () => {
       
       const event = events.value[index]
       
-      // Check if already joined
       if (event.participants.some(p => p.userId === authStore.user?.id)) {
         toastStore.show('You are already participating in this event', 'info')
         return true
       }
       
-      // Check if event is full
       if (event.currentPlayers >= event.maxPlayers) {
         toastStore.show('This event is already full', 'error')
         return false
       }
       
-      // Add user to participants
       const newParticipant = {
         userId: authStore.user.id,
         displayName: authStore.user.displayName,
@@ -289,7 +279,7 @@ export const useEventsStore = defineStore('events', () => {
     
     isLoading.value = true
     try {
-      // In a real app, this would be an API call
+      // TODO replace with POST /events/{id}/leave endpoint call
       await new Promise(resolve => setTimeout(resolve, 500))
       
       const index = events.value.findIndex(e => e.id === eventId)
@@ -299,19 +289,16 @@ export const useEventsStore = defineStore('events', () => {
       
       const event = events.value[index]
       
-      // Check if user is in the event
       const participantIndex = event.participants.findIndex(p => p.userId === authStore.user?.id)
       if (participantIndex === -1) {
         return false
       }
       
-      // Check if user is the host
       if (event.participants[participantIndex].isHost) {
         toastStore.show('As the host, you cannot leave the event. You must delete it instead.', 'error')
         return false
       }
       
-      // Remove user from participants
       event.participants.splice(participantIndex, 1)
       event.currentPlayers -= 1
       
