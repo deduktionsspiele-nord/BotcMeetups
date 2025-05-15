@@ -12,7 +12,7 @@
           <router-link to="/" class="flex items-center space-x-2">
             <div class="w-10 h-10 bg-contain bg-center bg-no-repeat" style="background-image: url('/src/assets/images/DSN_Logo_screen_new.png')"></div>
             <span class="font-display text-xl font-bold text-primary-400 hidden md:block">
-              {{ $t('app.name') }}
+              {{ $t('organisation.longName') }}
             </span>
           </router-link>
           
