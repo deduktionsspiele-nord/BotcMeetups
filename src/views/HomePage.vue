@@ -1,4 +1,3 @@
-```vue
 <template>
   <div class="flex flex-col">
     <!-- Hero Section -->
@@ -15,7 +14,7 @@
       
       <div class="container mx-auto px-4 py-16 md:py-32 relative z-20">
         <div class="max-w-3xl">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-light-950 leading-tight">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-medieval font-bold mb-6 text-light-950 leading-tight">
             <span class="text-primary-400">{{ $t('app.name') }}</span> <br />
             <span class="text-accent-400">{{ $t('nav.home') }}</span>
           </h1>
@@ -193,4 +192,3 @@ onMounted(async () => {
   await eventsStore.fetchEvents();
 });
 </script>
-```
