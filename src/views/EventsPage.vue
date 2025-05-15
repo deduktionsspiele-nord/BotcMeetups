@@ -2,14 +2,14 @@
   <div class="container mx-auto px-4 py-8">
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
       <div>
-        <h1 class="text-3xl md:text-4xl font-display font-bold text-primary-400 mb-2">Find Events</h1>
+        <h1 class="text-3xl md:text-4xl font-display font-bold text-primary-400 mb-2">{{ $t('events.title') }}</h1>
         <p class="text-light-600">
-          Discover Blood on the Clocktower games in your area or create your own
+          {{ $t('events.subtitle') }}
         </p>
       </div>
       
       <router-link v-if="authStore.isAuthenticated" to="/create-event">
-        <Button>Create New Event</Button>
+        <Button>{{ $t('events.createNew') }}</Button>
       </router-link>
     </div>
     
@@ -22,7 +22,7 @@
           </svg>
           <input
             type="text"
-            placeholder="Search by title or location..."
+            :placeholder="$t('events.search')"
             v-model="filters.searchTerm"
             class="input pl-10"
           />
@@ -36,7 +36,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
           </svg>
-          Filters
+          {{ $t('events.filters') }}
         </Button>
       </div>
       
@@ -45,7 +45,7 @@
         class="bg-dark-800 rounded-lg border border-dark-700 p-6 mb-6 animate-fade-in"
       >
         <div class="flex justify-between items-center mb-4">
-          <h3 class="text-lg font-bold text-light-900">Filter Events</h3>
+          <h3 class="text-lg font-bold text-light-900">{{ $t('events.filters') }}</h3>
           <button 
             @click="resetFilters"
             class="text-light-500 hover:text-light-900 flex items-center text-sm"
@@ -54,7 +54,7 @@
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
-            Reset
+            {{ $t('events.reset') }}
           </button>
         </div>
         
@@ -65,11 +65,11 @@
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              Location
+              {{ $t('events.location') }}
             </label>
             <input
               type="text"
-              placeholder="City or venue"
+              :placeholder="$t('events.create.locationPlaceholder')"
               v-model="filters.location"
               class="input"
             />
@@ -83,17 +83,17 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              Date Range
+              {{ $t('events.dateRange') }}
             </label>
             <select 
               class="input"
               v-model="filters.dateRange"
             >
-              <option value="">Any date</option>
-              <option value="today">Today</option>
-              <option value="this-week">This week</option>
-              <option value="this-month">This month</option>
-              <option value="next-month">Next month</option>
+              <option value="">{{ $t('events.dateOptions.anyDate') }}</option>
+              <option value="today">{{ $t('events.dateOptions.today') }}</option>
+              <option value="this-week">{{ $t('events.dateOptions.thisWeek') }}</option>
+              <option value="this-month">{{ $t('events.dateOptions.thisMonth') }}</option>
+              <option value="next-month">{{ $t('events.dateOptions.nextMonth') }}</option>
             </select>
           </div>
           
@@ -104,15 +104,15 @@
                 <line x1="2" y1="12" x2="22" y2="12"></line>
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
               </svg>
-              Event Type
+              {{ $t('events.eventType') }}
             </label>
             <select 
               class="input"
               v-model="filters.isPublic"
             >
-              <option :value="null">All events</option>
-              <option :value="true">Public only</option>
-              <option :value="false">Private only</option>
+              <option :value="null">{{ $t('events.typeOptions.all') }}</option>
+              <option :value="true">{{ $t('events.typeOptions.public') }}</option>
+              <option :value="false">{{ $t('events.typeOptions.private') }}</option>
             </select>
           </div>
           
@@ -124,7 +124,7 @@
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
-              Availability
+              {{ $t('events.availability') }}
             </label>
             <div class="flex items-center h-[42px]">
               <label class="inline-flex items-center cursor-pointer">
@@ -139,7 +139,7 @@
                           after:left-[2px] after:bg-dark-800 after:border-gray-300 after:border after:rounded-full 
                           after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
                 <span class="ml-3 text-sm font-medium text-light-700">
-                  Has available spots
+                  {{ $t('events.hasSpots') }}
                 </span>
               </label>
             </div>
@@ -152,10 +152,10 @@
             @click="resetFilters"
             class="mr-2"
           >
-            Clear
+            {{ $t('events.clear') }}
           </Button>
           <Button @click="applyFilters">
-            Apply Filters
+            {{ $t('events.apply') }}
           </Button>
         </div>
       </div>
@@ -180,12 +180,12 @@
         <line x1="8" y1="2" x2="8" y2="6"></line>
         <line x1="3" y1="10" x2="21" y2="10"></line>
       </svg>
-      <h3 class="text-xl font-bold mb-2">No events found</h3>
+      <h3 class="text-xl font-bold mb-2">{{ $t('events.noEvents') }}</h3>
       <p class="text-light-600 mb-6 max-w-md mx-auto">
-        We couldn't find any events matching your criteria. Try adjusting your filters or create your own event!
+        {{ $t('events.noEventsDesc') }}
       </p>
       <router-link :to="authStore.isAuthenticated ? '/create-event' : '/login'">
-        <Button>{{ authStore.isAuthenticated ? 'Create an Event' : 'Sign in to Create Event' }}</Button>
+        <Button>{{ authStore.isAuthenticated ? $t('events.createEventCta') : $t('events.signInToCreate') }}</Button>
       </router-link>
     </div>
   </div>
@@ -227,8 +227,7 @@ function resetFilters() {
 }
 
 function applyFilters() {
-  // This function is mostly for UX - the computed property will handle the actual filtering
-  showFilters.value = false; // Hide filter panel after applying
+  showFilters.value = false;
 }
 
 onMounted(async () => {
