@@ -3,18 +3,20 @@ import { ref, computed } from 'vue'
 import { User } from '@/types/user'
 import { useToastStore } from '@/stores/toast'
 
-// TODO replace mocking logic with call to backend endpoint
-// Use /auth/login and /auth/register endpoints from the API
+// In a real app, this would connect to Supabase or Firebase Auth
 export const useAuthStore = defineStore('auth', () => {
   const toastStore = useToastStore()
   
+  // State
   const user = ref<User | null>(null)
   const isLoading = ref(false)
   
+  // Getters
   const isAuthenticated = computed(() => !!user.value)
   
+  // Actions
   function initializeAuth() {
-    // TODO replace with proper JWT token validation and user info fetch
+    // Check local storage for existing session
     const storedUser = localStorage.getItem('botc-user')
     if (storedUser) {
       try {
@@ -29,9 +31,11 @@ export const useAuthStore = defineStore('auth', () => {
   async function login(email: string, password: string) {
     isLoading.value = true
     try {
-      // TODO replace with /auth/login endpoint call
+      // Mock login - in real app, this would call an auth service
+      // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 800))
       
+      // For demo purposes, any email/password combination works
       const newUser: User = {
         id: crypto.randomUUID(),
         email,
@@ -56,7 +60,7 @@ export const useAuthStore = defineStore('auth', () => {
   async function register(email: string, password: string, displayName: string) {
     isLoading.value = true
     try {
-      // TODO replace with /auth/register endpoint call
+      // Mock registration - in real app, this would call an auth service
       await new Promise(resolve => setTimeout(resolve, 1000))
       
       const newUser: User = {
@@ -81,7 +85,6 @@ export const useAuthStore = defineStore('auth', () => {
   }
   
   function logout() {
-    // TODO add backend logout call if needed
     user.value = null
     localStorage.removeItem('botc-user')
     toastStore.show('You have been logged out', 'info')
@@ -91,7 +94,7 @@ export const useAuthStore = defineStore('auth', () => {
     if (!user.value) return false
     
     try {
-      // TODO replace with /users/me endpoint call
+      // Mock profile update
       await new Promise(resolve => setTimeout(resolve, 500))
       
       user.value = {
