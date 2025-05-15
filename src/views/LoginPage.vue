@@ -1,10 +1,11 @@
+```vue
 <template>
   <div class="container mx-auto px-4 py-8">
     <div class="max-w-md mx-auto">
       <div class="text-center mb-8">
-        <h1 class="text-3xl font-display font-bold text-primary-400 mb-2">Welcome Back</h1>
+        <h1 class="text-3xl font-display font-bold text-primary-400 mb-2">{{ $t('auth.welcome') }}</h1>
         <p class="text-light-600">
-          Sign in to your account to join events and connect with other players
+          {{ $t('auth.loginPrompt') }}
         </p>
       </div>
       
@@ -13,7 +14,7 @@
           <div class="space-y-4">
             <div>
               <label for="email" class="block text-sm font-medium text-light-700 mb-1">
-                Email
+                {{ $t('auth.email') }}
               </label>
               <input
                 id="email"
@@ -21,17 +22,17 @@
                 type="email"
                 required
                 class="input"
-                placeholder="your@email.com"
+                :placeholder="'your@email.com'"
               />
             </div>
             
             <div>
               <div class="flex items-center justify-between mb-1">
                 <label for="password" class="block text-sm font-medium text-light-700">
-                  Password
+                  {{ $t('auth.password') }}
                 </label>
                 <a href="#" class="text-sm text-primary-400 hover:text-primary-300">
-                  Forgot password?
+                  {{ $t('auth.forgotPassword') }}
                 </a>
               </div>
               <input
@@ -52,21 +53,21 @@
                 class="text-primary-600 focus:ring-primary-500 h-4 w-4 border-dark-500"
               />
               <label for="remember" class="ml-2 block text-sm text-light-700">
-                Remember me
+                {{ $t('auth.rememberMe') }}
               </label>
             </div>
             
             <div>
-              <Button type="submit" :loading="isLoading" fullWidth>Sign In</Button>
+              <Button type="submit" :loading="isLoading" fullWidth>{{ $t('auth.signIn') }}</Button>
             </div>
           </div>
         </form>
         
         <div class="mt-6 text-center">
           <p class="text-sm text-light-500">
-            Don't have an account?
+            {{ $t('auth.noAccount') }}
             <router-link to="/register" class="text-primary-400 hover:text-primary-300 font-medium">
-              Sign up
+              {{ $t('auth.signUp') }}
             </router-link>
           </p>
         </div>
@@ -74,7 +75,7 @@
       
       <div class="bg-dark-800 rounded-lg border border-dark-700 p-4 mt-6 text-center">
         <p class="text-sm text-light-600 mb-2">
-          <strong>Demo Account:</strong> For testing purposes, you can use any email and password.
+          <strong>{{ $t('auth.demoAccount') }}:</strong> {{ $t('auth.demoAccountDesc') }}
         </p>
         <div class="flex items-center justify-center text-xs bg-dark-700 py-1 px-3 rounded text-light-500 font-mono inline-block">
           email: demo@example.com | password: password
@@ -111,3 +112,4 @@ async function handleSubmit() {
   }
 }
 </script>
+```

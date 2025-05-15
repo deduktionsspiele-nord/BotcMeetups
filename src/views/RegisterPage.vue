@@ -1,10 +1,11 @@
+```vue
 <template>
   <div class="container mx-auto px-4 py-8">
     <div class="max-w-md mx-auto">
       <div class="text-center mb-8">
-        <h1 class="text-3xl font-display font-bold text-primary-400 mb-2">Create an Account</h1>
+        <h1 class="text-3xl font-display font-bold text-primary-400 mb-2">{{ $t('auth.createAccount') }}</h1>
         <p class="text-light-600">
-          Join the Blood on the Clocktower community to find and organize games
+          {{ $t('auth.loginPrompt') }}
         </p>
       </div>
       
@@ -13,7 +14,7 @@
           <div class="space-y-4">
             <div>
               <label for="displayName" class="block text-sm font-medium text-light-700 mb-1">
-                Display Name
+                {{ $t('auth.displayName') }}
               </label>
               <input
                 id="displayName"
@@ -21,13 +22,13 @@
                 type="text"
                 required
                 class="input"
-                placeholder="Your name"
+                :placeholder="$t('profile.settings.displayName')"
               />
             </div>
             
             <div>
               <label for="email" class="block text-sm font-medium text-light-700 mb-1">
-                Email
+                {{ $t('auth.email') }}
               </label>
               <input
                 id="email"
@@ -41,7 +42,7 @@
             
             <div>
               <label for="password" class="block text-sm font-medium text-light-700 mb-1">
-                Password
+                {{ $t('auth.password') }}
               </label>
               <input
                 id="password"
@@ -55,7 +56,7 @@
             
             <div>
               <label for="passwordConfirm" class="block text-sm font-medium text-light-700 mb-1">
-                Confirm Password
+                {{ $t('auth.confirmPassword') }}
               </label>
               <input
                 id="passwordConfirm"
@@ -66,7 +67,7 @@
                 placeholder="••••••••"
               />
               <p v-if="passwordMismatch" class="mt-1 text-sm text-error-500">
-                Passwords don't match
+                {{ $t('auth.passwordMismatch') }}
               </p>
             </div>
             
@@ -79,10 +80,10 @@
                 class="text-primary-600 focus:ring-primary-500 h-4 w-4 border-dark-500"
               />
               <label for="terms" class="ml-2 block text-sm text-light-700">
-                I agree to the 
-                <a href="#" class="text-primary-400 hover:text-primary-300">Terms of Service</a> 
-                and 
-                <a href="#" class="text-primary-400 hover:text-primary-300">Privacy Policy</a>
+                {{ $t('auth.acceptTerms') }}
+                <a href="#" class="text-primary-400 hover:text-primary-300">{{ $t('auth.termsOfService') }}</a>
+                {{ $t('auth.and') }}
+                <a href="#" class="text-primary-400 hover:text-primary-300">{{ $t('auth.privacyPolicy') }}</a>
               </label>
             </div>
             
@@ -93,7 +94,7 @@
                 :disabled="!form.acceptTerms || passwordMismatch" 
                 fullWidth
               >
-                Create Account
+                {{ $t('auth.createAccount') }}
               </Button>
             </div>
           </div>
@@ -101,9 +102,9 @@
         
         <div class="mt-6 text-center">
           <p class="text-sm text-light-500">
-            Already have an account?
+            {{ $t('auth.haveAccount') }}
             <router-link to="/login" class="text-primary-400 hover:text-primary-300 font-medium">
-              Sign in
+              {{ $t('auth.signIn') }}
             </router-link>
           </p>
         </div>
@@ -153,3 +154,4 @@ async function handleSubmit() {
   }
 }
 </script>
+```
