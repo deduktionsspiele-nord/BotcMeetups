@@ -15,8 +15,8 @@
       <div class="container mx-auto px-4 py-16 md:py-32 relative z-20">
         <div class="max-w-3xl">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-medieval font-bold mb-6 text-light-950 leading-tight">
-            <span class="text-primary-400">{{ $t('app.name') }}</span> <br />
-            <span class="text-accent-400">{{ $t('nav.home') }}</span>
+            <span class="text-floral-500">Blood on the Clocktower</span> <br />
+            <span class="text-accent-400">Hamburg</span>
           </h1>
           
           <p class="text-xl md:text-2xl mb-8 text-light-700 leading-relaxed">
